@@ -2,294 +2,441 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prueba Ciencias Sociales - 1º Grado</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prueba Ciencias Sociales - 1º Secundaria - Colegio José Ingenieros</title>
   <style>
     body {
-      font-family: 'Comic Sans MS', sans-serif;
-      background: linear-gradient(to bottom, #aee1f9, #ffffff);
-      margin: 0;
-      padding: 0;
-      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #d0e7ff, #f0f8ff);
+      margin: 0; padding: 0;
+      color: #222;
       scroll-behavior: smooth;
     }
-
     header {
-      background-color: #6ec6ff;
+      background-color: #005f99;
       color: white;
-      padding: 20px;
+      padding: 25px 15px;
       text-align: center;
-      animation: moverTitulo 3s infinite alternate;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
-
-    @keyframes moverTitulo {
-      0% { transform: scale(1); }
-      100% { transform: scale(1.05); }
+    header h1 {
+      font-size: 2.2em;
+      margin-bottom: 0.2em;
+      font-weight: 700;
     }
-
-    h1 {
-      font-size: 2em;
-      margin: 0;
+    header h3 {
+      font-weight: 400;
+      font-size: 1.2em;
+      font-style: italic;
     }
-
-    .temas, .pregunta, .tema-estudio {
-      background-color: #fefefe;
+    .contenedor {
+      max-width: 900px;
+      margin: 25px auto;
+      padding: 0 15px;
+    }
+    section.temas, section.estudio, main.prueba {
+      background: #ffffffcc;
+      border-radius: 15px;
+      padding: 25px 20px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      margin-bottom: 35px;
+    }
+    h2, h3 {
+      color: #004466;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    ul.lista-temas {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 25px;
+    }
+    ul.lista-temas li {
+      padding-left: 1.2em;
+      margin-bottom: 10px;
+      position: relative;
+      font-weight: 600;
+      font-size: 1.1em;
+    }
+    ul.lista-temas li::before {
+      content: "🗂️";
+      position: absolute;
+      left: 0;
+      top: 2px;
+    }
+    .tema-estudio {
+      margin-bottom: 20px;
+      border-left: 5px solid #0077cc;
+      padding-left: 15px;
+    }
+    .tema-estudio h3 {
+      font-size: 1.3em;
+      margin-bottom: 8px;
+      color: #00334d;
+    }
+    .tema-estudio p {
+      font-size: 1em;
+      line-height: 1.4;
+      color: #1a1a1a;
+    }
+    main.prueba section.pregunta {
+      margin-bottom: 25px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    main.prueba section.pregunta h3 {
+      font-weight: 700;
+      font-size: 1.2em;
+      margin-bottom: 12px;
+      color: #005f99;
+    }
+    main.prueba ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    main.prueba li {
+      margin-bottom: 10px;
+      font-size: 1em;
+    }
+    input[type="radio"] {
+      margin-right: 12px;
+      cursor: pointer;
+      transform: scale(1.15);
+      vertical-align: middle;
+    }
+    button.boton {
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      padding: 14px 24px;
+      font-size: 1.1em;
       border-radius: 12px;
-      padding: 15px;
-      margin: 15px auto;
-      width: 92%;
-      max-width: 600px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      display: block;
+      margin: 30px auto 10px;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(0,119,204,0.4);
       transition: background-color 0.3s ease;
     }
-
-    .temas h2 {
-      text-align: center;
-      margin-bottom: 10px;
+    button.boton:hover {
+      background-color: #005f99;
+      box-shadow: 0 6px 16px rgba(0,95,153,0.6);
     }
-
-    .temas ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .temas li {
-      margin: 8px 0;
-      font-size: 1em;
-    }
-
-    .botones {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
-
-    .boton-prueba, .boton-estudiar {
-      padding: 12px 20px;
-      background-color: #4caf50;
-      color: white;
-      font-size: 1em;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .boton-prueba:hover, .boton-estudiar:hover {
-      background-color: #388e3c;
-    }
-
-    .pregunta:hover {
-      transform: scale(1.01);
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      margin: 6px 0;
-    }
-
-    input[type="radio"] {
-      margin-right: 10px;
-      cursor: pointer;
-    }
-
-    .boton {
-      background-color: #ffb74d;
-      color: white;
-      border: none;
-      padding: 10px 16px;
-      font-size: 1em;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      display: block;
-      margin: 20px auto;
-    }
-
-    .boton:hover {
-      background-color: #ffa726;
-    }
-
     footer {
       text-align: center;
-      padding: 15px;
-      background-color: #eeeeee;
       font-size: 0.9em;
-      margin-top: 30px;
+      padding: 15px 0;
+      background-color: #e1eefa;
+      color: #004466;
+      border-top: 1px solid #ccc;
+      margin-top: 50px;
     }
-
-    /* Estilos para respuestas correctas e incorrectas */
+    /* Resaltar respuestas */
     .correcta {
-      background-color: #d4edda !important; /* verde suave */
+      background-color: #d4f7d4 !important;
       border-left: 6px solid #28a745;
     }
-
     .incorrecta {
-      background-color: #f8d7da !important; /* rojo suave */
-      border-left: 6px solid #dc3545;
+      background-color: #f7d4d4 !important;
+      border-left: 6px solid #d43939;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>📚 Prueba de Ciencias Sociales - 1º Año 🏫</h1>
-    <h3>Colegio José Ingenieros - Unidad 2</h3>
-  </header>
+
+<header>
+  <h1>📚 Prueba de Ciencias Sociales - 1º Secundaria</h1>
+  <h3>Colegio José Ingenieros - Unidad 2 - Historia y Geografía</h3>
+</header>
+
+<div class="contenedor">
 
   <section class="temas">
-    <h2>📌 Temas que entran en la prueba:</h2>
-    <ul>
-      <li>🕰️ ¿Qué es la historia?</li>
-      <li>📚 Ciencia social e historia</li>
-      <li>❓ Importancia de estudiar historia</li>
-      <li>🗞️ Fuentes históricas</li>
-      <li>🧠 Disciplinas auxiliares</li>
-      <li>🧬 Proceso de hominización</li>
-      <li>🙉 Homínidos y características</li>
-      <li>⏳ Diacronía y sincronía</li>
-      <li>🌾 Neolítico y sus cambios</li>
-      <li>🏠 Aldeas y sociedad neolítica</li>
-      <li>🧔‍♂️ Sociedad sumeria</li>
-      <li>🌍 Relieve continental y oceánico</li>
+    <h2>📌 Temas a estudiar para la prueba:</h2>
+    <ul class="lista-temas">
+      <li>Definición y objeto de estudio de la Historia y las Ciencias Sociales</li>
+      <li>Fuentes históricas: tipos y características</li>
+      <li>Disciplinas auxiliares y su aporte al estudio histórico</li>
+      <li>Proceso de hominización: etapas y características clave</li>
+      <li>Conceptos de diacronía y sincronía en el análisis histórico</li>
+      <li>Transformaciones sociales y económicas del Neolítico</li>
+      <li>Organización social, política y económica de la sociedad sumeria</li>
+      <li>Relieve continental y oceánico: características principales y ejemplos</li>
+      <li>La importancia del tiempo histórico y la cronología</li>
+      <li>El rol de la cultura material en la reconstrucción del pasado</li>
+      <li>Comparación entre diferentes civilizaciones antiguas</li>
+      <li>Impacto de la agricultura en la evolución social y tecnológica</li>
+      <li>Fuentes primarias y secundarias: definición y ejemplos</li>
+      <li>Geografía física: factores que modifican el relieve y el clima</li>
+      <li>La escritura cuneiforme y sus aportes al desarrollo humano</li>
     </ul>
-    <div class="botones">
-      <button class="boton-estudiar" onclick="document.getElementById('estudio').scrollIntoView({behavior: 'smooth'})">📖 Estudiar</button>
-      <button class="boton-prueba" onclick="document.getElementById('prueba').scrollIntoView({behavior: 'smooth'})">📝 Ir a la Prueba</button>
+  </section>
+
+  <section class="estudio" id="estudio">
+    <h2>📖 Material para estudiar:</h2>
+
+    <div class="tema-estudio">
+      <h3>📜 ¿Qué es la Historia?</h3>
+      <p>La Historia es la ciencia social que estudia los hechos, procesos y transformaciones que ha experimentado la humanidad a lo largo del tiempo. Analiza causas, consecuencias y el contexto para comprender el desarrollo de las sociedades.</p>
+    </div>
+
+    <div class="tema-estudio">
+      <h3>🔍 Fuentes históricas</h3>
+      <p>Se clasifican en primarias (documentos, testimonios directos, restos arqueológicos) y secundarias (análisis, interpretaciones). Son esenciales para reconstruir y verificar hechos históricos.</p>
+    </div>
+
+    <div class="tema-estudio">
+      <h3>🧬 Proceso de hominización</h3>
+      <p>Proceso evolutivo que abarca desde los primeros primates hasta el Homo sapiens, incluyendo el desarrollo de habilidades como el bipedalismo, el uso de herramientas, el lenguaje y la cultura.</p>
+    </div>
+
+    <div class="tema-estudio">
+      <h3>⏳ Diacronía y sincronía</h3>
+      <p>Diacronía: análisis de los fenómenos históricos a través del tiempo, permitiendo observar cambios y evolución. Sincronía: estudio de los fenómenos en un mismo periodo temporal, comparando diferentes eventos simultáneos.</p>
+    </div>
+
+    <div class="tema-estudio">
+      <h3>🌾 Revolución neolítica</h3>
+      <p>Momento histórico en que el ser humano dejó de ser nómada para dedicarse a la agricultura y la ganadería, dando origen a aldeas, nuevas tecnologías y organización social más compleja.</p>
+    </div>
+
+    <div class="tema-estudio">
+      <h3>🏛️ Sociedad Sumeria</h3>
+      <p>Una de las primeras civilizaciones en Mesopotamia, caracterizada por la invención de la escritura cuneiforme, leyes codificadas, sistemas administrativos, templos religiosos y una estructura social jerárquica.</p>
+    </div>
+
+    <div class="tema-estudio">
+      <h3>🌍 Relieve continental y oceánico</h3>
+      <p>El relieve continental incluye montañas, llanuras, mesetas y valles. El relieve oceánico abarca fosas, dorsales, plataformas continentales y cañones submarinos, que afectan el clima y la biodiversidad.</p>
+    </div>
+
+    <div class="tema-estudio">
+      <h3>📚 Disciplinas auxiliares de la Historia</h3>
+      <p>Arqueología, antropología, paleontología, geografía, numismática y epigrafía, entre otras, que ayudan a interpretar y completar la información histórica.</p>
+    </div>
+
+    <div class="tema-estudio">
+      <h3>⌛ Cronología histórica</h3>
+      <p>Ordenación temporal de los acontecimientos, utilizando eras, siglos, décadas, y periodos para facilitar el estudio y la comparación de hechos.</p>
+    </div>
+
+    <div class="tema-estudio">
+      <h3>✍️ Escritura cuneiforme</h3>
+      <p>Sistema de escritura desarrollado por los sumerios, utilizando signos en forma de cuñas sobre tablillas de barro, que permitió el registro administrativo, legal y cultural.</p>
     </div>
   </section>
 
-  <section id="estudio">
-    <div class="tema-estudio"><h3>🕰️ ¿Qué es la historia?</h3><p>Es la ciencia que estudia los hechos del pasado, cómo vivían las personas y cómo cambió el mundo con el tiempo.</p></div>
-    <div class="tema-estudio"><h3>📚 ¿Por qué es una ciencia social?</h3><p>Porque se ocupa de estudiar a los humanos y sus relaciones en sociedad.</p></div>
-    <div class="tema-estudio"><h3>❓ ¿Para qué sirve estudiar historia?</h3><p>Nos ayuda a entender nuestro pasado, actuar con conciencia en el presente y planear un mejor futuro.</p></div>
-    <div class="tema-estudio"><h3>🗞️ Fuentes históricas</h3><p>Son los restos del pasado: documentos, objetos, fósiles o relatos que nos dan pistas sobre lo que ocurrió.</p></div>
-    <div class="tema-estudio"><h3>🧠 Disciplinas auxiliares</h3><p>Ayudan a los historiadores a investigar: arqueología, geografía, antropología, entre otras.</p></div>
-    <div class="tema-estudio"><h3>🧬 Proceso de hominización</h3><p>Transformación progresiva de los simios hasta llegar al ser humano moderno.</p></div>
-    <div class="tema-estudio"><h3>🙉 Características de los homínidos</h3><p>Caminar erguidos, usar herramientas, vivir en grupos, y tener lenguaje.</p></div>
-    <div class="tema-estudio"><h3>⏳ Diacronía y sincronía</h3><p>Diacronía: hechos a lo largo del tiempo. Sincronía: hechos simultáneos.</p></div>
-    <div class="tema-estudio"><h3>🌾 Neolítico</h3><p>Etapa en la que el ser humano comenzó a cultivar, domesticar animales y vivir en aldeas.</p></div>
-    <div class="tema-estudio"><h3>🏠 Aldeas y vida neolítica</h3><p>Comienzo de la vida sedentaria, construcción de casas, y creación de herramientas más complejas.</p></div>
-    <div class="tema-estudio"><h3>🧔‍♂️ Sociedad sumeria</h3><p>Una de las primeras civilizaciones. Tenían escritura, leyes, templos y clases sociales.</p></div>
-    <div class="tema-estudio"><h3>🌍 Relieve</h3><p>Las formas del suelo terrestre: montañas, valles, océanos, cordilleras submarinas, etc.</p></div>
-  </section>
+  <main class="prueba" id="prueba">
+    <h2>📝 Prueba - Responde con atención:</h2>
 
-  <main id="prueba">
-    <section class="pregunta"><h3>1. ¿Qué estudia la historia?</h3>
+    <section class="pregunta">
+      <h3>1. ¿Cuál es el objeto principal de estudio de la Historia?</h3>
       <ul>
-        <li><label><input type="radio" name="p1" value="0"> La vida de los animales</label></li>
-        <li><label><input type="radio" name="p1" value="1" id="c1"> El pasado de la humanidad</label></li>
-        <li><label><input type="radio" name="p1" value="0"> El espacio exterior</label></li>
+        <li><label><input type="radio" name="p1" value="0" /> El análisis de fenómenos naturales</label></li>
+        <li><label><input type="radio" name="p1" value="1" id="c1"/> Los procesos sociales y transformaciones humanas a lo largo del tiempo</label></li>
+        <li><label><input type="radio" name="p1" value="0" /> El estudio exclusivo de personajes famosos</label></li>
       </ul>
     </section>
 
-    <section class="pregunta"><h3>2. ¿Qué es una fuente histórica?</h3>
+    <section class="pregunta">
+      <h3>2. ¿Cuál es una fuente histórica primaria?</h3>
       <ul>
-        <li><label><input type="radio" name="p2" value="0"> Un dibujo animado</label></li>
-        <li><label><input type="radio" name="p2" value="1" id="c2"> Un objeto del pasado</label></li>
-        <li><label><input type="radio" name="p2" value="0"> Una página web moderna</label></li>
+        <li><label><input type="radio" name="p2" value="0" /> Una investigación académica moderna</label></li>
+        <li><label><input type="radio" name="p2" value="1" id="c2"/> Una tablilla sumeria original</label></li>
+        <li><label><input type="radio" name="p2" value="0" /> Una película documental reciente</label></li>
       </ul>
     </section>
 
-    <section class="pregunta"><h3>3. ¿Qué es el proceso de hominización?</h3>
+    <section class="pregunta">
+      <h3>3. ¿Qué disciplina auxiliar es fundamental para analizar restos arqueológicos?</h3>
       <ul>
-        <li><label><input type="radio" name="p3" value="0"> La evolución del perro</label></li>
-        <li><label><input type="radio" name="p3" value="1" id="c3"> Evolución hacia el ser humano</label></li>
-        <li><label><input type="radio" name="p3" value="0"> La historia de los dinosaurios</label></li>
+        <li><label><input type="radio" name="p3" value="1" id="c3"/> Arqueología</label></li>
+        <li><label><input type="radio" name="p3" value="0" /> Geografía</label></li>
+        <li><label><input type="radio" name="p3" value="0" /> Sociología</label></li>
       </ul>
     </section>
 
-    <section class="pregunta"><h3>4. ¿Qué significa diacronía?</h3>
+    <section class="pregunta">
+      <h3>4. El proceso de hominización incluye:</h3>
       <ul>
-        <li><label><input type="radio" name="p4" value="1" id="c4"> Estudio de hechos a lo largo del tiempo</label></li>
-        <li><label><input type="radio" name="p4" value="0"> Hechos en el mismo momento</label></li>
-        <li><label><input type="radio" name="p4" value="0"> Estudio del clima</label></li>
+        <li><label><input type="radio" name="p4" value="0" /> Desarrollo de la agricultura</label></li>
+        <li><label><input type="radio" name="p4" value="1" id="c4"/> Aparición del bipedalismo y uso de herramientas</label></li>
+        <li><label><input type="radio" name="p4" value="0" /> La creación de las primeras ciudades</label></li>
       </ul>
     </section>
 
-    <section class="pregunta"><h3>5. ¿Qué marcó el comienzo del Neolítico?</h3>
+    <section class="pregunta">
+      <h3>5. El análisis diacrónico se refiere a:</h3>
       <ul>
-        <li><label><input type="radio" name="p5" value="1" id="c5"> Agricultura y vida sedentaria</label></li>
-        <li><label><input type="radio" name="p5" value="0"> La invención del teléfono</label></li>
-        <li><label><input type="radio" name="p5" value="0"> El uso de monedas</label></li>
+        <li><label><input type="radio" name="p5" value="1" id="c5"/> El estudio de los cambios históricos a través del tiempo</label></li>
+        <li><label><input type="radio" name="p5" value="0" /> El análisis de eventos simultáneos</label></li>
+        <li><label><input type="radio" name="p5" value="0" /> La descripción geográfica de un lugar</label></li>
       </ul>
     </section>
 
-    <section class="pregunta"><h3>6. ¿Qué disciplina ayuda a estudiar restos arqueológicos?</h3>
+    <section class="pregunta">
+      <h3>6. La Revolución Neolítica se caracteriza principalmente por:</h3>
       <ul>
-        <li><label><input type="radio" name="p6" value="0"> Medicina</label></li>
-        <li><label><input type="radio" name="p6" value="1" id="c6"> Arqueología</label></li>
-        <li><label><input type="radio" name="p6" value="0"> Astronomía</label></li>
+        <li><label><input type="radio" name="p6" value="0" /> La expansión de la navegación marítima</label></li>
+        <li><label><input type="radio" name="p6" value="1" id="c6"/> La domesticación de plantas y animales</label></li>
+        <li><label><input type="radio" name="p6" value="0" /> El desarrollo de la escritura alfabética</label></li>
       </ul>
     </section>
 
-    <section class="pregunta"><h3>7. ¿Qué construyeron los sumerios?</h3>
+    <section class="pregunta">
+      <h3>7. ¿Qué permitió la escritura cuneiforme sumeria?</h3>
       <ul>
-        <li><label><input type="radio" name="p7" value="0"> Rascacielos</label></li>
-        <li><label><input type="radio" name="p7" value="1" id="c7"> Ciudades con templos y escritura</label></li>
-        <li><label><input type="radio" name="p7" value="0"> Aviones</label></li>
+        <li><label><input type="radio" name="p7" value="1" id="c7"/> Registrar leyes, transacciones y cultura</label></li>
+        <li><label><input type="radio" name="p7" value="0" /> Escribir poesía exclusivamente</label></li>
+        <li><label><input type="radio" name="p7" value="0" /> Comunicar solo con señales de humo</label></li>
       </ul>
     </section>
 
-    <section class="pregunta"><h3>8. ¿Qué forma parte del relieve oceánico?</h3>
+    <section class="pregunta">
+      <h3>8. ¿Cuál NO es parte del relieve oceánico?</h3>
       <ul>
-        <li><label><input type="radio" name="p8" value="0"> Montañas</label></li>
-        <li><label><input type="radio" name="p8" value="0"> Llanuras</label></li>
-        <li><label><input type="radio" name="p8" value="1" id="c8"> Fosas y dorsales oceánicas</label></li>
+        <li><label><input type="radio" name="p8" value="0" /> Fosas oceánicas</label></li>
+        <li><label><input type="radio" name="p8" value="0" /> Dorsales oceánicas</label></li>
+        <li><label><input type="radio" name="p8" value="1" id="c8"/> Mesetas continentales</label></li>
       </ul>
     </section>
 
-    <button class="boton" onclick="mostrarRespuestas()">✅ Enviar respuestas</button>
+    <section class="pregunta">
+      <h3>9. La cronología histórica sirve para:</h3>
+      <ul>
+        <li><label><input type="radio" name="p9" value="1" id="c9"/> Ordenar eventos según su tiempo de ocurrencia</label></li>
+        <li><label><input type="radio" name="p9" value="0" /> Describir características geográficas</label></li>
+        <li><label><input type="radio" name="p9" value="0" /> Clasificar animales fósiles</label></li>
+      </ul>
+    </section>
+
+    <section class="pregunta">
+      <h3>10. ¿Cuál fue un impacto social de la agricultura en el Neolítico?</h3>
+      <ul>
+        <li><label><input type="radio" name="p10" value="0" /> Mayor movilidad constante</label></li>
+        <li><label><input type="radio" name="p10" value="1" id="c10"/> Sedentarización y formación de aldeas</label></li>
+        <li><label><input type="radio" name="p10" value="0" /> Eliminación total del comercio</label></li>
+      </ul>
+    </section>
+
+    <section class="pregunta">
+      <h3>11. En la sociedad sumeria, la autoridad política estaba principalmente en manos de:</h3>
+      <ul>
+        <li><label><input type="radio" name="p11" value="1" id="c11"/> Los reyes y sacerdotes</label></li>
+        <li><label><input type="radio" name="p11" value="0" /> Los agricultores</label></li>
+        <li><label><input type="radio" name="p11" value="0" /> Los comerciantes</label></li>
+      </ul>
+    </section>
+
+    <section class="pregunta">
+      <h3>12. Las fuentes secundarias se caracterizan por:</h3>
+      <ul>
+        <li><label><input type="radio" name="p12" value="0" /> Ser testimonios directos del pasado</label></li>
+        <li><label><input type="radio" name="p12" value="1" id="c12"/> Ser interpretaciones y análisis realizados posteriormente</label></li>
+        <li><label><input type="radio" name="p12" value="0" /> Estar compuestas exclusivamente por objetos físicos</label></li>
+      </ul>
+    </section>
+
+    <section class="pregunta">
+      <h3>13. ¿Cuál de estos hechos es un ejemplo de análisis sincrónico?</h3>
+      <ul>
+        <li><label><input type="radio" name="p13" value="1" id="c13"/> Estudiar las diferentes culturas que coexistieron en el año 500 A.C.</label></li>
+        <li><label><input type="radio" name="p13" value="0" /> Analizar la evolución del imperio romano desde su fundación</label></li>
+        <li><label><input type="radio" name="p13" value="0" /> Describir los cambios en la agricultura durante el Neolítico</label></li>
+      </ul>
+    </section>
+
+    <section class="pregunta">
+      <h3>14. ¿Qué factor geográfico influye en la formación del relieve continental?</h3>
+      <ul>
+        <li><label><input type="radio" name="p14" value="1" id="c14"/> Movimientos tectónicos</label></li>
+        <li><label><input type="radio" name="p14" value="0" /> Corrientes marinas</label></li>
+        <li><label><input type="radio" name="p14" value="0" /> La migración humana</label></li>
+      </ul>
+    </section>
+
+    <section class="pregunta">
+      <h3>15. ¿Cuál fue un aporte cultural fundamental de la escritura cuneiforme?</h3>
+      <ul>
+        <li><label><input type="radio" name="p15" value="1" id="c15"/> Facilitó el registro administrativo y la transmisión del conocimiento</label></li>
+        <li><label><input type="radio" name="p15" value="0" /> Permitió solo la comunicación oral</label></li>
+        <li><label><input type="radio" name="p15" value="0" /> Fue un código secreto para los sacerdotes</label></li>
+      </ul>
+    </section>
+
+    <button class="boton" onclick="calcularResultado()">Calcular Resultado</button>
+
+    <p id="resultado" style="text-align:center; font-size:1.3em; font-weight:700; margin-top: 20px;"></p>
   </main>
+</div>
 
-  <footer>
-    Unidad 2 - Ciencias Sociales - 1º Año - Colegio José Ingenieros
-  </footer>
+<footer>
+  &copy; 2025 Colegio José Ingenieros - Ciencias Sociales
+</footer>
 
-  <script>
-    function mostrarRespuestas() {
-      const preguntas = 8;
-      let puntaje = 0;
+<script>
+  function calcularResultado() {
+    const respuestasCorrectas = [
+      "p1_c1",
+      "p2_c2",
+      "p3_c3",
+      "p4_c4",
+      "p5_c5",
+      "p6_c6",
+      "p7_c7",
+      "p8_c8",
+      "p9_c9",
+      "p10_c10",
+      "p11_c11",
+      "p12_c12",
+      "p13_c13",
+      "p14_c14",
+      "p15_c15"
+    ];
 
-      for (let i = 1; i <= preguntas; i++) {
-        // Seleccionamos todos los inputs con name pX
-        const opciones = document.getElementsByName('p' + i);
-        let correctaSeleccionada = false;
-        let respuestaCorrectaEncontrada = false;
+    let puntaje = 0;
+    let totalPreguntas = 15;
 
-        for (const opcion of opciones) {
-          // Accedemos al <li> contenedor para cambiar color de fondo
-          const li = opcion.parentElement.parentElement;
-          li.classList.remove('correcta', 'incorrecta'); // resetear clases
-
-          // Si es la opción correcta (tiene id="cX")
-          if (opcion.id === 'c' + i) {
-            respuestaCorrectaEncontrada = true;
-            // Si está seleccionada, suma punto y marca verde
-            if (opcion.checked) {
-              puntaje++;
-              li.classList.add('correcta');
-              correctaSeleccionada = true;
-            } else {
-              // No seleccionada, marcar verde para mostrar cuál es la correcta
-              li.classList.add('correcta');
-            }
-          } else {
-            // Opción incorrecta
-            if (opcion.checked) {
-              li.classList.add('incorrecta');
-            }
-          }
+    for(let i = 1; i <= totalPreguntas; i++) {
+      const opciones = document.getElementsByName('p'+i);
+      for(let opcion of opciones) {
+        if(opcion.checked && opcion.id === 'c'+i) {
+          puntaje++;
         }
       }
-
-      alert(`Has obtenido ${puntaje} de ${preguntas} puntos.`);
     }
-  </script>
+
+    const porcentaje = (puntaje / totalPreguntas) * 100;
+
+    let mensaje = `Obtuviste ${puntaje} de ${totalPreguntas} respuestas correctas. (${porcentaje.toFixed(1)}%) `;
+
+    if(puntaje === totalPreguntas) {
+      mensaje += "¡Excelente! Dominás los contenidos de forma sobresaliente.";
+    } else if(puntaje >= totalPreguntas * 0.8) {
+      mensaje += "Muy bien, sólo algunos detalles por repasar.";
+    } else if(puntaje >= totalPreguntas * 0.5) {
+      mensaje += "Podés mejorar, te recomiendo estudiar los temas indicados.";
+    } else {
+      mensaje += "Necesitás reforzar tus conocimientos con el material de estudio.";
+    }
+
+    document.getElementById("resultado").textContent = mensaje;
+
+    // Resaltar respuestas
+    for(let i = 1; i <= totalPreguntas; i++) {
+      const opciones = document.getElementsByName('p'+i);
+      for(let opcion of opciones) {
+        opcion.parentElement.classList.remove('correcta', 'incorrecta');
+        if(opcion.id === 'c'+i) {
+          opcion.parentElement.classList.add('correcta');
+        }
+        if(opcion.checked && opcion.id !== 'c'+i) {
+          opcion.parentElement.classList.add('incorrecta');
+        }
+      }
+    }
+  }
+</script>
+
 </body>
 </html>
