@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prueba Ciencias Sociales - 1º Grado</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', sans-serif;
+      background: linear-gradient(to bottom, #aee1f9, #ffffff);
+      margin: 0;
+      padding: 0;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #6ec6ff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      animation: moverTitulo 3s infinite alternate;
+    }
+
+    @keyframes moverTitulo {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.05); }
+    }
+
+    h1 {
+      font-size: 2em;
+      margin: 0;
+    }
+
+    .temas {
+      background-color: #fefefe;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .temas h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .temas ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .temas li {
+      margin: 10px 0;
+      font-size: 1.1em;
+    }
+
+    .botones {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .boton-prueba, .boton-estudiar {
+      padding: 15px 25px;
+      background-color: #4caf50;
+      color: white;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .boton-prueba:hover, .boton-estudiar:hover {
+      background-color: #388e3c;
+    }
+
+    .pregunta, .tema-estudio {
+      background-color: #f0f8ff;
+      border-radius: 12px;
+      padding: 15px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .pregunta:hover {
+      transform: scale(1.02);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    .boton {
+      background-color: #ffb74d;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      display: block;
+      margin: 20px auto;
+    }
+
+    .boton:hover {
+      background-color: #ffa726;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #eeeeee;
+      font-size: 0.9em;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌍 Prueba de Ciencias Sociales - 1º Grado 🌞</h1>
+    <h3>Colegio José Ingenieros - Unidad 3</h3>
+  </header>
+
+  <section class="temas">
+    <h2>📚 Temas que entran en la prueba:</h2>
+    <ul>
+      <li>🌦️ Fenómenos meteorológicos (págs. 32 y 33)</li>
+      <li>🔥 Cambio climático (10 características, pág. 33)</li>
+      <li>🌳 Árboles y nidos</li>
+      <li>🧑‍🤝‍🧑 Seres del medio y su relación (págs. 50 a 52)</li>
+      <li>🏔️ Relieve continental y oceánico (págs. 78 a 80)</li>
+    </ul>
+    <div class="botones">
+      <button class="boton-estudiar" onclick="document.getElementById('estudio').scrollIntoView({behavior: 'smooth'})">📖 Estudiar</button>
+      <button class="boton-prueba" onclick="document.getElementById('prueba').scrollIntoView({behavior: 'smooth'})">🎯 Ir a la Prueba</button>
+    </div>
+  </section>
+
+  <section id="estudio">
+    <div class="tema-estudio">
+      <h3>🌦️ Fenómenos meteorológicos</h3>
+      <p>Son los cambios que ocurren en el clima, como la lluvia, el viento, la nieve o las tormentas. Los podemos ver en el cielo y sentir en el ambiente.</p>
+    </div>
+    <div class="tema-estudio">
+      <h3>🔥 Cambio climático</h3>
+      <p>Es una transformación del clima del planeta causada por la contaminación y la actividad humana. Algunas características son: aumento de temperatura, más tormentas, derretimiento de hielo, sequías, incendios, subida del nivel del mar, cambios en los cultivos, pérdida de animales, olas de calor y climas extremos.</p>
+    </div>
+    <div class="tema-estudio">
+      <h3>🌳 Árboles y nidos</h3>
+      <p>Los árboles dan oxígeno, sombra, frutas y son el hogar de muchos animales. Los nidos son construcciones de pájaros y otros animales para vivir y cuidar a sus crías.</p>
+    </div>
+    <div class="tema-estudio">
+      <h3>🧑‍🤝‍🧑 Seres del medio y su relación</h3>
+      <p>Todos los seres vivos (personas, animales y plantas) se relacionan entre sí. Algunos se ayudan, otros compiten. Por ejemplo, las abejas y las flores se ayudan.</p>
+    </div>
+    <div class="tema-estudio">
+      <h3>🏔️ Relieve continental y oceánico</h3>
+      <p>El relieve continental son las formas de la tierra, como montañas, llanuras y valles. El relieve oceánico está bajo el mar, e incluye montañas submarinas, fosas y mesetas del fondo del océano.</p>
+    </div>
+  </section>
+
+  <main id="prueba">
+    <section class="pregunta">
+      <h3>1. ¿Qué es un fenómeno meteorológico?</h3>
+      <ul>
+        <li><input type="radio" name="p1" /> Una persona que estudia mapas</li>
+        <li><input type="radio" name="p1" /> Un cambio en el clima como lluvia o viento</li>
+        <li><input type="radio" name="p1" /> Una roca muy grande</li>
+      </ul>
+    </section>
+
+    <section class="pregunta">
+      <h3>2. ¿Cuál es una característica del cambio climático?</h3>
+      <ul>
+        <li><input type="radio" name="p2" /> Se forman más arcoíris</li>
+        <li><input type="radio" name="p2" /> Aumentan las lluvias y el calor</li>
+        <li><input type="radio" name="p2" /> Las estaciones duran 1 día</li>
+      </ul>
+    </section>
+
+    <section class="pregunta">
+      <h3>3. ¿Para qué sirve un árbol en la naturaleza?</h3>
+      <ul>
+        <li><input type="radio" name="p3" /> Para jugar videojuegos</li>
+        <li><input type="radio" name="p3" /> Para dar sombra, oxígeno y hogar a animales</li>
+        <li><input type="radio" name="p3" /> Para hacer ruido</li>
+      </ul>
+    </section>
+
+    <section class="pregunta">
+      <h3>4. ¿Qué es el relieve continental?</h3>
+      <ul>
+        <li><input type="radio" name="p4" /> Las formas de la tierra como montañas y valles</li>
+        <li><input type="radio" name="p4" /> Los colores del mar</li>
+        <li><input type="radio" name="p4" /> Los sonidos del bosque</li>
+      </ul>
+    </section>
+
+    <button class="boton">✅ Enviar respuestas</button>
+  </main>
+
+  <footer>
+    Unidad 3 - Ciencias Sociales - 1º Secundaria - Colegio José Ingenieros
+  </footer>
+</body>
+</html>
