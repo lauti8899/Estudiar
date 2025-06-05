@@ -32,19 +32,19 @@
       margin: 0;
     }
 
-    .temas {
+    .temas, .pregunta, .tema-estudio {
       background-color: #fefefe;
-      padding: 20px;
       border-radius: 12px;
-      margin: 20px auto;
-      width: 90%;
+      padding: 15px;
+      margin: 15px auto;
+      width: 92%;
       max-width: 600px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease;
     }
 
     .temas h2 {
       text-align: center;
-      color: #333;
       margin-bottom: 10px;
     }
 
@@ -54,23 +54,23 @@
     }
 
     .temas li {
-      margin: 10px 0;
-      font-size: 1.1em;
+      margin: 8px 0;
+      font-size: 1em;
     }
 
     .botones {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 15px;
       flex-wrap: wrap;
-      margin-top: 20px;
+      margin-top: 10px;
     }
 
     .boton-prueba, .boton-estudiar {
-      padding: 15px 25px;
+      padding: 12px 20px;
       background-color: #4caf50;
       color: white;
-      font-size: 1.1em;
+      font-size: 1em;
       border: none;
       border-radius: 10px;
       cursor: pointer;
@@ -81,19 +81,8 @@
       background-color: #388e3c;
     }
 
-    .pregunta, .tema-estudio {
-      background-color: #f0f8ff;
-      border-radius: 12px;
-      padding: 15px;
-      margin: 20px auto;
-      width: 90%;
-      max-width: 600px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-
     .pregunta:hover {
-      transform: scale(1.02);
+      transform: scale(1.01);
     }
 
     ul {
@@ -102,18 +91,19 @@
     }
 
     li {
-      margin: 8px 0;
+      margin: 6px 0;
     }
 
     input[type="radio"] {
       margin-right: 10px;
+      cursor: pointer;
     }
 
     .boton {
       background-color: #ffb74d;
       color: white;
       border: none;
-      padding: 12px 20px;
+      padding: 10px 16px;
       font-size: 1em;
       border-radius: 8px;
       cursor: pointer;
@@ -133,94 +123,173 @@
       font-size: 0.9em;
       margin-top: 30px;
     }
+
+    /* Estilos para respuestas correctas e incorrectas */
+    .correcta {
+      background-color: #d4edda !important; /* verde suave */
+      border-left: 6px solid #28a745;
+    }
+
+    .incorrecta {
+      background-color: #f8d7da !important; /* rojo suave */
+      border-left: 6px solid #dc3545;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>🌍 Prueba de Ciencias Sociales - 1º Grado 🌞</h1>
-    <h3>Colegio José Ingenieros - Unidad 3</h3>
+    <h1>📚 Prueba de Ciencias Sociales - 1º Año 🏫</h1>
+    <h3>Colegio José Ingenieros - Unidad 2</h3>
   </header>
 
   <section class="temas">
-    <h2>📚 Temas que entran en la prueba:</h2>
+    <h2>📌 Temas que entran en la prueba:</h2>
     <ul>
-      <li>🌦️ Fenómenos meteorológicos (págs. 32 y 33)</li>
-      <li>🔥 Cambio climático (10 características, pág. 33)</li>
-      <li>🌳 Árboles y nidos</li>
-      <li>🧑‍🤝‍🧑 Seres del medio y su relación (págs. 50 a 52)</li>
-      <li>🏔️ Relieve continental y oceánico (págs. 78 a 80)</li>
+      <li>🕰️ ¿Qué es la historia?</li>
+      <li>📚 Ciencia social e historia</li>
+      <li>❓ Importancia de estudiar historia</li>
+      <li>🗞️ Fuentes históricas</li>
+      <li>🧠 Disciplinas auxiliares</li>
+      <li>🧬 Proceso de hominización</li>
+      <li>🙉 Homínidos y características</li>
+      <li>⏳ Diacronía y sincronía</li>
+      <li>🌾 Neolítico y sus cambios</li>
+      <li>🏠 Aldeas y sociedad neolítica</li>
+      <li>🧔‍♂️ Sociedad sumeria</li>
+      <li>🌍 Relieve continental y oceánico</li>
     </ul>
     <div class="botones">
       <button class="boton-estudiar" onclick="document.getElementById('estudio').scrollIntoView({behavior: 'smooth'})">📖 Estudiar</button>
-      <button class="boton-prueba" onclick="document.getElementById('prueba').scrollIntoView({behavior: 'smooth'})">🎯 Ir a la Prueba</button>
+      <button class="boton-prueba" onclick="document.getElementById('prueba').scrollIntoView({behavior: 'smooth'})">📝 Ir a la Prueba</button>
     </div>
   </section>
 
   <section id="estudio">
-    <div class="tema-estudio">
-      <h3>🌦️ Fenómenos meteorológicos</h3>
-      <p>Son los cambios que ocurren en el clima, como la lluvia, el viento, la nieve o las tormentas. Los podemos ver en el cielo y sentir en el ambiente.</p>
-    </div>
-    <div class="tema-estudio">
-      <h3>🔥 Cambio climático</h3>
-      <p>Es una transformación del clima del planeta causada por la contaminación y la actividad humana. Algunas características son: aumento de temperatura, más tormentas, derretimiento de hielo, sequías, incendios, subida del nivel del mar, cambios en los cultivos, pérdida de animales, olas de calor y climas extremos.</p>
-    </div>
-    <div class="tema-estudio">
-      <h3>🌳 Árboles y nidos</h3>
-      <p>Los árboles dan oxígeno, sombra, frutas y son el hogar de muchos animales. Los nidos son construcciones de pájaros y otros animales para vivir y cuidar a sus crías.</p>
-    </div>
-    <div class="tema-estudio">
-      <h3>🧑‍🤝‍🧑 Seres del medio y su relación</h3>
-      <p>Todos los seres vivos (personas, animales y plantas) se relacionan entre sí. Algunos se ayudan, otros compiten. Por ejemplo, las abejas y las flores se ayudan.</p>
-    </div>
-    <div class="tema-estudio">
-      <h3>🏔️ Relieve continental y oceánico</h3>
-      <p>El relieve continental son las formas de la tierra, como montañas, llanuras y valles. El relieve oceánico está bajo el mar, e incluye montañas submarinas, fosas y mesetas del fondo del océano.</p>
-    </div>
+    <div class="tema-estudio"><h3>🕰️ ¿Qué es la historia?</h3><p>Es la ciencia que estudia los hechos del pasado, cómo vivían las personas y cómo cambió el mundo con el tiempo.</p></div>
+    <div class="tema-estudio"><h3>📚 ¿Por qué es una ciencia social?</h3><p>Porque se ocupa de estudiar a los humanos y sus relaciones en sociedad.</p></div>
+    <div class="tema-estudio"><h3>❓ ¿Para qué sirve estudiar historia?</h3><p>Nos ayuda a entender nuestro pasado, actuar con conciencia en el presente y planear un mejor futuro.</p></div>
+    <div class="tema-estudio"><h3>🗞️ Fuentes históricas</h3><p>Son los restos del pasado: documentos, objetos, fósiles o relatos que nos dan pistas sobre lo que ocurrió.</p></div>
+    <div class="tema-estudio"><h3>🧠 Disciplinas auxiliares</h3><p>Ayudan a los historiadores a investigar: arqueología, geografía, antropología, entre otras.</p></div>
+    <div class="tema-estudio"><h3>🧬 Proceso de hominización</h3><p>Transformación progresiva de los simios hasta llegar al ser humano moderno.</p></div>
+    <div class="tema-estudio"><h3>🙉 Características de los homínidos</h3><p>Caminar erguidos, usar herramientas, vivir en grupos, y tener lenguaje.</p></div>
+    <div class="tema-estudio"><h3>⏳ Diacronía y sincronía</h3><p>Diacronía: hechos a lo largo del tiempo. Sincronía: hechos simultáneos.</p></div>
+    <div class="tema-estudio"><h3>🌾 Neolítico</h3><p>Etapa en la que el ser humano comenzó a cultivar, domesticar animales y vivir en aldeas.</p></div>
+    <div class="tema-estudio"><h3>🏠 Aldeas y vida neolítica</h3><p>Comienzo de la vida sedentaria, construcción de casas, y creación de herramientas más complejas.</p></div>
+    <div class="tema-estudio"><h3>🧔‍♂️ Sociedad sumeria</h3><p>Una de las primeras civilizaciones. Tenían escritura, leyes, templos y clases sociales.</p></div>
+    <div class="tema-estudio"><h3>🌍 Relieve</h3><p>Las formas del suelo terrestre: montañas, valles, océanos, cordilleras submarinas, etc.</p></div>
   </section>
 
   <main id="prueba">
-    <section class="pregunta">
-      <h3>1. ¿Qué es un fenómeno meteorológico?</h3>
+    <section class="pregunta"><h3>1. ¿Qué estudia la historia?</h3>
       <ul>
-        <li><input type="radio" name="p1" /> Una persona que estudia mapas</li>
-        <li><input type="radio" name="p1" /> Un cambio en el clima como lluvia o viento</li>
-        <li><input type="radio" name="p1" /> Una roca muy grande</li>
+        <li><label><input type="radio" name="p1" value="0"> La vida de los animales</label></li>
+        <li><label><input type="radio" name="p1" value="1" id="c1"> El pasado de la humanidad</label></li>
+        <li><label><input type="radio" name="p1" value="0"> El espacio exterior</label></li>
       </ul>
     </section>
 
-    <section class="pregunta">
-      <h3>2. ¿Cuál es una característica del cambio climático?</h3>
+    <section class="pregunta"><h3>2. ¿Qué es una fuente histórica?</h3>
       <ul>
-        <li><input type="radio" name="p2" /> Se forman más arcoíris</li>
-        <li><input type="radio" name="p2" /> Aumentan las lluvias y el calor</li>
-        <li><input type="radio" name="p2" /> Las estaciones duran 1 día</li>
+        <li><label><input type="radio" name="p2" value="0"> Un dibujo animado</label></li>
+        <li><label><input type="radio" name="p2" value="1" id="c2"> Un objeto del pasado</label></li>
+        <li><label><input type="radio" name="p2" value="0"> Una página web moderna</label></li>
       </ul>
     </section>
 
-    <section class="pregunta">
-      <h3>3. ¿Para qué sirve un árbol en la naturaleza?</h3>
+    <section class="pregunta"><h3>3. ¿Qué es el proceso de hominización?</h3>
       <ul>
-        <li><input type="radio" name="p3" /> Para jugar videojuegos</li>
-        <li><input type="radio" name="p3" /> Para dar sombra, oxígeno y hogar a animales</li>
-        <li><input type="radio" name="p3" /> Para hacer ruido</li>
+        <li><label><input type="radio" name="p3" value="0"> La evolución del perro</label></li>
+        <li><label><input type="radio" name="p3" value="1" id="c3"> Evolución hacia el ser humano</label></li>
+        <li><label><input type="radio" name="p3" value="0"> La historia de los dinosaurios</label></li>
       </ul>
     </section>
 
-    <section class="pregunta">
-      <h3>4. ¿Qué es el relieve continental?</h3>
+    <section class="pregunta"><h3>4. ¿Qué significa diacronía?</h3>
       <ul>
-        <li><input type="radio" name="p4" /> Las formas de la tierra como montañas y valles</li>
-        <li><input type="radio" name="p4" /> Los colores del mar</li>
-        <li><input type="radio" name="p4" /> Los sonidos del bosque</li>
+        <li><label><input type="radio" name="p4" value="1" id="c4"> Estudio de hechos a lo largo del tiempo</label></li>
+        <li><label><input type="radio" name="p4" value="0"> Hechos en el mismo momento</label></li>
+        <li><label><input type="radio" name="p4" value="0"> Estudio del clima</label></li>
       </ul>
     </section>
 
-    <button class="boton">✅ Enviar respuestas</button>
+    <section class="pregunta"><h3>5. ¿Qué marcó el comienzo del Neolítico?</h3>
+      <ul>
+        <li><label><input type="radio" name="p5" value="1" id="c5"> Agricultura y vida sedentaria</label></li>
+        <li><label><input type="radio" name="p5" value="0"> La invención del teléfono</label></li>
+        <li><label><input type="radio" name="p5" value="0"> El uso de monedas</label></li>
+      </ul>
+    </section>
+
+    <section class="pregunta"><h3>6. ¿Qué disciplina ayuda a estudiar restos arqueológicos?</h3>
+      <ul>
+        <li><label><input type="radio" name="p6" value="0"> Medicina</label></li>
+        <li><label><input type="radio" name="p6" value="1" id="c6"> Arqueología</label></li>
+        <li><label><input type="radio" name="p6" value="0"> Astronomía</label></li>
+      </ul>
+    </section>
+
+    <section class="pregunta"><h3>7. ¿Qué construyeron los sumerios?</h3>
+      <ul>
+        <li><label><input type="radio" name="p7" value="0"> Rascacielos</label></li>
+        <li><label><input type="radio" name="p7" value="1" id="c7"> Ciudades con templos y escritura</label></li>
+        <li><label><input type="radio" name="p7" value="0"> Aviones</label></li>
+      </ul>
+    </section>
+
+    <section class="pregunta"><h3>8. ¿Qué forma parte del relieve oceánico?</h3>
+      <ul>
+        <li><label><input type="radio" name="p8" value="0"> Montañas</label></li>
+        <li><label><input type="radio" name="p8" value="0"> Llanuras</label></li>
+        <li><label><input type="radio" name="p8" value="1" id="c8"> Fosas y dorsales oceánicas</label></li>
+      </ul>
+    </section>
+
+    <button class="boton" onclick="mostrarRespuestas()">✅ Enviar respuestas</button>
   </main>
 
   <footer>
-    Unidad 3 - Ciencias Sociales - 1º Secundaria - Colegio José Ingenieros
+    Unidad 2 - Ciencias Sociales - 1º Año - Colegio José Ingenieros
   </footer>
+
+  <script>
+    function mostrarRespuestas() {
+      const preguntas = 8;
+      let puntaje = 0;
+
+      for (let i = 1; i <= preguntas; i++) {
+        // Seleccionamos todos los inputs con name pX
+        const opciones = document.getElementsByName('p' + i);
+        let correctaSeleccionada = false;
+        let respuestaCorrectaEncontrada = false;
+
+        for (const opcion of opciones) {
+          // Accedemos al <li> contenedor para cambiar color de fondo
+          const li = opcion.parentElement.parentElement;
+          li.classList.remove('correcta', 'incorrecta'); // resetear clases
+
+          // Si es la opción correcta (tiene id="cX")
+          if (opcion.id === 'c' + i) {
+            respuestaCorrectaEncontrada = true;
+            // Si está seleccionada, suma punto y marca verde
+            if (opcion.checked) {
+              puntaje++;
+              li.classList.add('correcta');
+              correctaSeleccionada = true;
+            } else {
+              // No seleccionada, marcar verde para mostrar cuál es la correcta
+              li.classList.add('correcta');
+            }
+          } else {
+            // Opción incorrecta
+            if (opcion.checked) {
+              li.classList.add('incorrecta');
+            }
+          }
+        }
+      }
+
+      alert(`Has obtenido ${puntaje} de ${preguntas} puntos.`);
+    }
+  </script>
 </body>
 </html>
